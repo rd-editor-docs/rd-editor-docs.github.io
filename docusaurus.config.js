@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Level Editor Tutorial',
   tagline: 'A tutorial that covers everything in the level editor, from cues to surgery.',
-  url: 'https://rd-editor-docs.github.io/rd-editor-docs',
-  baseUrl: '/',
+  url: 'https://rd-editor-docs.github.io',
+  baseUrl: '/rd-editor-docs/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
