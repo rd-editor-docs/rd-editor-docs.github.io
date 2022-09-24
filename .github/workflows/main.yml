@@ -40,27 +40,34 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: npm
-          
+
+      - name: Retrieve the cached "node_modules" directory (if present)
+        id: node-cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
 
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Build files
         run: npm run build
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public
+          path: ./build
 
 # Deployment job
   deploy:
