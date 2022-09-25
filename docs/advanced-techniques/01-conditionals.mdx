@@ -1,0 +1,68 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Conditionals
+
+Conditionals allow parts of your level to be triggered only when certain requirements are met. These can be applied to almost all events.
+
+There are two ways to enter the conditionals menu:
+
+**1. The directional sign in the top left corner when selecting most events.**
+
+<img className="no-space" src="https://cdn.discordapp.com/attachments/527522645290385408/837768189081288734/unknown.png" alt="Icon for opening conditionals menu" width="60%"/>
+
+**2. The 'Conditionals' button in the Actions tab.**
+
+<img className="no-space" src="https://i.imgur.com/kuCywAC.png" alt="Actions tab with the 'Conditionals' button" width="30%"/>
+
+The conditionals menu looks like this:
+<img className="no-space" src="https://cdn.discordapp.com/attachments/527522645290385408/837768523509792778/unknown.png" alt="Options that appear when opening the conditionals menu" width="50%"/>
+
+This menu will eventually contain all the conditions you end up using in your level, to allow for easy access and reuse.
+
+## Creating a conditional
+<img src="https://cdn.discordapp.com/attachments/527522645290385408/837769690520092672/unknown.png" alt="Edit Condition menu" width="60%"/>
+
+The **name** of the condition is only used as a title, so pick something that makes sense to you.
+There are **five types** of conditions:
+  - **Last Hit** triggers the condition based on the most recent hit of a row.
+	  - The particular row and hit type can be further specified.
+  - **Custom** triggers the condition based on an expression
+	  - More details are provided below, as this allows for very complex conditions.
+  - **Times Executed** triggers the condition based on how many times the event was executed.
+	  - Note: Your level must contain a loop in order for events to be executed more than once.
+  - **Language** triggers the condition based on the language the game is being played in.
+      - This can be useful for dialogue or floating text in different languages.
+  - **Player Mode** triggers the condition based on whether the level is being played in 1P or 2P.
+
+You can also delete a condition with the **Delete** button at the bottom. Note that deleting a condition will remove it from all events that use it.
+
+Once created, conditions can be modified or duplicated from the conditionals menu by hovering over the condition.
+
+<img src="https://i.imgur.com/peNehEt.png" alt="Options for duplicating or modifying conditions" width="60%"/>
+
+The duplicate button (on the left) will make a copy of the condition, while the wrench button (on the right) will allow you to modify the condition. Duplicating the condition will not automatically apply the new condition to all events that used the old condition.
+
+
+## Attaching a conditional to an event
+
+You can decide whether an event should be triggered or not by attaching conditionals to it.
+
+A condition that is highlighted **blue** means that it be satisfied if the condition is true, while a condition that is highlighted **red** means that it will be satisfied if the condition is false.
+*All conditions on an event must be satisfied for the event to be triggered.*
+
+For example, an event with this set of conditions will only trigger if the most recent hit was a Perfect **and** the Language is not set to English.
+
+<img src="https://i.imgur.com/P9HBNP7.png" alt="Example of an event with multiple conditions" width="60%"/>
+
+Hovering over the directional sign on an event with conditions will display a helpful summary of the conditions attached.
+
+<img src="https://i.imgur.com/nnolNXe.png" alt="Condition pop-up" width="60%"/>
+
+
+## Conditional Duration
+
+The clock icon in the top right lets you set the **duration** of a condition, which is the window of time in which the event can be triggered (by satisfying all the conditions). The event will not trigger if all conditions are not met at any time within the duration. The conditions will not be checked before the event is passed by the playhead.
+
+Note that the conditions are checked **every frame** of the duration, which means that the event can be triggered multiple times. For example, an event with a duration of 8 beats will check if all conditions are met for the next 8 beats, possibly triggering more than once.
+
+A condition with a duration of 0 beats will only trigger once, immediately when the event is passed by the timeline.

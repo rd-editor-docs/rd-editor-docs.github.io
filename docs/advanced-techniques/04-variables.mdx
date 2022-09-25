@@ -1,0 +1,66 @@
+# Variables
+
+There are two types of variables: **read-only** and **editable**. The value of read-only variables cannot be changed manually, while they can be changed  in editable variables.
+
+## Editable Variables
+
+There are currently 3 types of editable variables: **integers** (i), **floats** (f), and **booleans** (b). 10 of each variable are currently accessible. The names of variables cannot be changed, only their values.
+
+- Integers are named i0, i1, ... i9.
+    - Can take any integer value from -2,147,483,648 to 2,147,483,647.
+- Floats are named f0, f1, ... f9.
+- Booleans are named b0, b1, ... b9.
+    - Either `true` or `false`.
+
+The variable `buttonPressCount` acts like an integer (and can be modified accordingly), but is additionally incremented whenever the player presses.
+
+## Read-only variables
+
+These are special variables that provide some information about the current level or state of the game. The value of these variables cannot be modified, they can only be read.
+
+|     Variable Name       |                 Definition                 |
+| ----------------------- | ------------------------------------------ |
+| `bpm`                   | The currently set bpm                      |
+| `barNumber`             | The current bar number                     |
+| `numEarlyHits`          | The current number of early hits           |
+| `numLateHits`           | The current number of late hits            |
+| `numPerfectHits`        | The current number of perfect hits         |
+| `numMisses`             | The current number of misses (without mistake weighting) |
+| `numMistakes`           | The current number of mistakes (with mistake weighting)  |
+| `XPress`  (X is a key)  | `true` immediately when X is pressed, `false` otherwise  |
+| `XRelease`              | `true` immediately when X is released, `false` otherwise |
+| `XIsPressed`            | `true` while X is being held down, `false` otherwise     |
+
+List of allowed keys: `p1`, `p2`, `anyPlayer`, `up`, `down`, `left`, `right`.
+
+## Using variables
+
+Variables can be used in 3 locations:
+- Call Custom Method, in an expression
+- Floating Text/Dialogue/Status Sign
+- Conditionals
+
+### Call Custom Method
+
+Variables can be read or modified in the Custom Method Name field. This can be combined with tags and conditionals to allow programmatic usage of variables.
+
+This supports the operators `++`, `--`, and `=`.
+
+Examples: `i1++`, `i2 = 4`
+
+### Floating Text/Dialogue Status Sign
+
+Variables can be displayed in these events using interpolation. Simply surround the expression with braces.
+
+Examples: `I have {i1} apples`, `We have {i1 + i2} pears`
+
+
+### Conditionals
+
+Variables can be read in the Expression field of a condition. These can be combined with operators `==`, `!=`, `>`, `<`. 
+
+Examples: `i1 == 1`, `i2 > i3`
+
+
+## Operators
+In addition to the comparison operators, there are also the mathematical operators `+`, `-`, `*`, `/`, and `%` (modulo).

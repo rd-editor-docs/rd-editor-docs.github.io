@@ -1,0 +1,84 @@
+# Tags
+
+Tags allow groups of events to be executed together, as many times as needed.
+
+![](https://i.imgur.com/bU05UBu.png)
+
+Multiple events can be given the same tag. When the tag is run, all the events will be executed as if the playhead jumped to the first event with the tag and started running from there. **Note that the maximum distance between events with the same tag is 1 bar**. Any longer and you will encounter unexpected behaviour.
+
+> A common way to work around the 1 bar maximum is by creating a 99-beat bar at the very end of the level.
+
+Tagged events can be called as many times as needed simply by running the tag multiple times. This allows for event re-use and better organization. Tags can also be disabled, which prevents them from being run.
+
+> **Note: Currently, tagged Play Sound events are not well-supported. When running the tag, the Play Sound event will be triggered slightly later than expected (approximately 300ms).** There are 2 workarounds (not recommended):
+>  - Moving the Play Sound event earlier relative to other tagged events.
+>    - You may need to create a useless event to act as an anchor if there are no other tagged events.
+>  - Running the tag with the custom method and changing the execution time to OnPreBar.
+>    - This will cause other tagged VFX events will be executed at a different relative time.
+
+## Tagging Events
+Pressing Shift-0 will toggle the visibility of the tag field on each event. Each event can only contain one tag. Upon tagging, the lower-left corner of the event will be coloured orange.
+
+![](https://i.imgur.com/ejsRN0F.png)
+
+Tagged events do not play when the playhead passes over them, unlike normal events. This means they can be placed anywhere in the level. Instead, the tags must be run with a separate event.
+
+> **Note: When scrubbing, tagged VFX events are currently bugged and will be played when the playhead passes over them. Playing the level from bar 1 does not have this issue.**
+
+## Running a tag
+
+> **Note: Do not have an event call its own tag at any point. Upon scrubbing at any point other than bar 1, the game will crash.**
+
+Tagged events can be run in two ways:
+
+### 1. The Tag Action event
+
+![](https://i.imgur.com/rsSWE7r.png)
+
+The Tag Action event can be found near the bottom of the VFX list. Select the `Run Tag` or `Run All Tags Containing Text` action from the dropdown, and provide the tag's name. The tag will be executed as soon as the playhead passes over the Tag Action event, *unless* the Tag Action event itself is tagged (see the section on layering tags below).
+
+### 2. The RunTag() custom method (or its alias, RunEventsWithTag())
+
+![](https://i.imgur.com/3IUJcMH.png)
+
+This requires a Call Custom Method event (near the bottom of the VFX list). Both `RunTag()` and `RunEventsWithTag()` do the same thing, and need to be provided the tag name prepended with `str:`.
+
+## Enabling and Disabling Tags
+
+The Tag Action event supports enabling and disabling specific tags, as well as all tags containing a specified text.
+
+The corresponding custom methods are listed below: (replace `tagName` with your tag's name)
+```javascript
+EnableTag(str:tagName)
+DisableTag(str:tagName)
+EnableTagsContaining(str:tagName)
+DisableTagsContaining(str:tagName)
+```
+
+While the effect can be replicated using conditionals, these events can come in handy when combined with certain special tags.
+
+## Special Tags
+
+Special tags are prepended onto your tag name, like shown below. These tags will be automatically run every time their condition is met, without needing to be run manually with an event.
+
+![](https://i.imgur.com/i3RwyPX.png)
+
+|        Tag              |                 Condition                  |
+| ----------------------- | ------------------------------------------ |
+| `[onHit]`               | Every time a beat is hit                   |
+| `[onMiss]`              | Every time a beat is missed                |
+| `[onHeldPressHit]`      | Every time a held beat's press is hit      |
+| `[onHeldReleaseHit]`    | Every time a held beat's release is hit    |
+| `[onHeldPressMiss]`     | Every time a held beat's hit is missed     |
+| `[onHeldReleaseMiss]`   | Every time a held beat's release is missed |
+| `[rowX]` (X is a number)| Modifies the tag to only apply to one row  |
+
+For the `[rowX]` event, X is a 0-indexed number. For example, the tag `[onHit][row0]` will run every time a beat on row 1 is hit. If the row does not exist, it will apply to all rows (i.e. the tag will be ignored).
+
+These special tags can also be the target of Enable/Disable Tag events. Because they are executed so frequently, it is much simpler to enable/disable the tag than to manage conditionals around them.
+
+## Layering Tags
+
+For more complex groupings, you may want to consider running a tag from another tag (known as *layering*). Since the Tag Action and Call Custom Method events can both be tagged, you can have one tag execute multiple tags in this fashion.
+
+![](https://i.imgur.com/SSfVchY.png)

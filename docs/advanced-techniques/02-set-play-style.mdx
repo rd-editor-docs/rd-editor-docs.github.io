@@ -1,0 +1,54 @@
+import ReactPlayer from 'react-player';
+
+# Set Play Style
+Setting the play style allows you to change the behaviour of the playhead (the scrolling white line on the timeline). Note that changing the play style **will not** change the behaviour of the music. The music will continue playing as if the play style did not change. 
+
+There are 6 possible play styles: Normal, Loop, LoopBeatsOnly, Prolong, Immediately, and ExtraImmediately.
+
+:::danger
+
+Do not loop or jump to bar 1, this will cause issues.
+
+:::
+
+## Normal
+
+Ths is the default behaviour. The playhead advances through bars in sequential order.
+
+## Loop
+This causes the playhead to restart the current bar upon reaching the end of the current bar. This will repeat until the play style is changed to something else.
+
+## LoopBeatsOnly
+This causes the playhead to restart the current bar upon reaching the end of the current bar, but subsequent times only plays the beats (i.e. without the vfx).
+
+## Prolong
+This causes the playhead to stop at the end of the current bar until the play style is changed to something else. The game **will wait for the end of a bar** (music-wise) before changing the play style away from Prolong in order to maintain sync.
+
+![](https://i.imgur.com/61rKfMT.png)
+*The playhead will remain here until the play style is changed.*
+
+Note that since the playhead no longer moves, **you will get stuck** unless you have a conditional that eventually triggers and changes the play style.
+
+Using the `activeDialogues` mod automatically sets the play style to Prolong, which lets dialogue remain on screen until user input is received.
+
+## Immediately
+This causes the playhead to jump to another bar **after a prebar of approximately 667ms**. The absolute bar number can be given, or a relative bar number from the current bar can be given instead.
+
+![](https://i.imgur.com/ij7uQ1d.png)
+
+Unlike the `SetNextBar()` custom method, this event can be executed in the middle of a bar (or even the middle of a beat).
+
+This will almost certainly cause your level to desync from the music, as the jump is performed immediately after the prebar delay ends. This can be remedied with some planning.
+
+
+## ExtraImmediately
+This is similar to Immediately, but causes the playhead to jump to another bar quicker, with **a delay of approximately 300ms**.
+
+This will also almost certainly cause your level to desync from the music.
+
+----
+
+Helpful example video from @huantian#4880:
+<ReactPlayer className="no-space" playing controls url={require('./set_play_style_demo.mp4').default} />
+
+----

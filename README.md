@@ -32,6 +32,7 @@ TODO as everyone currently making changes should be directly added to the organi
 
 TODO as everyone currently making changes should be directly added to the organization (can commit directly to `main`).
 
+
 ## Working with Docusaurus
 
 ### Documentation pages
@@ -50,13 +51,29 @@ All the documentation files are in the `docs` folder.
 		sidebar_position: 1
 	---
 	```
+
+### Media
   
-All images should go in `static/img`. To reference these from `docs`, use `img/<rest of file path>`.
+Images can be placed in the same folder as documentation pages or inside a nested `assets` folder. These can be accessed in Markdown using relative paths.
+- They can also be accessed in JSX components using `src={require(<relative path>).default}`.
+
+If you want styling on images (e.g. to center it on the page or change the size), you have to use JSX and change your file extension to `.mdx`.
+```
+<img className="no-space" src="https://i.imgur.com/nnolNXe.png" alt="Condition pop-up" width="60%"/>
+```
+Note that JSX is **NOT** HTML. There are some differences, like using `className` instead of `class`.
+
+CSS is applied globally through the `src/css/custom.css` file, so you can add styles there if you want repeated styling.
+	- There are some classes there already that might be helpful for what you need, like `no-space`.
+
+Videos can be embedded by importing ReactPlayer:
+- Insert `import ReactPlayer from 'react-player';` at the top of the page.
+- Use `<ReactPlayer playing controls url={require('./set_play_style_demo.mp4').default} />` to embed the video.
 
 ### Custom pages
 
 If you want to create your own wacky page, it goes in `src/pages`. The homepage is one of those files.
-- This kind of page lets you leverage React and JavaScript along with custom CSS files.
+- This type of page lets you leverage React and JavaScript along with custom CSS files.
 
 ### Translations
 
