@@ -1,0 +1,92 @@
+# Classic Rows
+
+## Making a Classic Row
+
+Now that you've got the song in place, it's time to make some beats. Head over to the Rows tab and you'll notice that a Samurai row has been created by default.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1037996898453295185/image.png" alt="Initial view of Rows tab" width="70%"/>
+	<figcaption>Press play and you can now see your new Samurai friend</figcaption>
+</figure>
+
+Selecting the Samurai row opens a new panel contains some important information: the character, the row type, which player controls their beats in a 2-player level (or if the game hits these beats automatically), the beatsound, and the visibility.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1037998055640813619/unknown.png" alt="Row details" width="70%"/>
+	<figcaption>There are plenty of characters to choose from to make your level</figcaption>
+</figure>
+
+The most important option is the top one, **Type**. Type has two options: **Classic** and **Oneshot**. Classic rows follow a 7 pulse pattern, while a Oneshot row has 2 pulses. A row can only have one type of beat on it.
+
+A 1-tick beat has already been placed for you, but you can click anywhere on the timeline to place another one.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038000016243032074/Untitled.png" alt="Beat details" width="70%"/>
+
+Hovering your cursor over the beat reveals green markings that give a visual indication of where each pulse in the beat lies. The yellow mark is the 7th pulse, where the player is expected to hit.
+
+### Tick
+
+The **Tick** is the length of each pulse in a beat. Changing it to 2 doubles the amount of time it takes for each pulse to complete, while 0.5 halves it.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038000660110643200/image.png" alt="Rows tab containing different ticks" width="70%"/>
+
+Some Tick values are used more than others, namely: `1, 0.75, 0.6666, 0.5, 0.3333, 0.25, 2, 4`.
+
+These are also the common lengths of beats used in songs, so if you find that you have to use different numbers very often, there is a good chance that your BPM is wrong.
+
+### Swing
+
+By moving the **Swing** slider, you'll notice that the green markings on the beat move back and forth. Changing the swing amount means that the pulses won't be evenly spaced. Instead, there will be a long and short cycle between pulses.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038001157240537148/va9uJVOp14.gif" alt="Illustration of different swing values" width="70%"/>
+
+Here is an example of the difference swing makes - both beats are 1-tick, but the top row has no swing, while the bottom row has 0.5 swing.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038001637639323708/8hKi8N79Si.gif" alt="Comparison of 0 swing vs 0.5 swing" width="70%"/>
+
+:::danger
+Do not use the maximum swing amount possible, since this will make it look like the pulse is skipping through the row.
+:::
+
+Example:
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038001896591474778/ntkAhuwwrb.gif" alt="Illustration of 1 tick 2 swing" width="70%"/>
+
+## Switch to Set Row X's
+
+Pressing this option will remove the beat and replace it with a new panel.
+
+![Set Row X's menu](https://cdn.discordapp.com/attachments/809186922420502568/1038002426852151316/image.png)
+
+Here you can add **Offbeats** and arrow pulses by left clicking for offbeats, and right clicking to cycle through arrows.
+
+![Some offbeats and arrow pulses](https://cdn.discordapp.com/attachments/809186922420502568/1038002752917348423/image.png)
+
+An **Offbeat**, as indicated by a red X, will not play the row's beat sound as the pulse crosses it. Arrow pulses do not affect gameplay,  but just change the appearance for that one pulse.
+
+A *Set Row X's* event will last as long as you want until you replace it with another, so you don't need to repeatedly put down events for the same pattern.
+
+:::caution
+If you place an Offbeat on the first pulse of a row, players will not be able to hear the difference between a standard 7 pulse row and your newly created 6 pulse row. Avoid doing this to keep your patterns fair for players.
+:::
+
+## Break into Free time pulses
+
+**Free time** pulses (also known as freetimes) are special types of beats. You can change the timing of each pulse individually, make them go backwards, or even go anywhere you want.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038003196792156160/ZKfpCtt511.gif" alt="Freetime example" width="70%"/>
+
+:::caution
+Be careful using freetime pulses as they can be unfair for players. Remember that the person playing your level hasn't necessarily heard the song before.
+:::
+
+## Terminology
+
+:::info
+**Pulse** - Each part of a beat - indicated by green and yellow lines.  
+**Classic** - The standard type of beat, and lasts for 7 pulses.  
+**Oneshot** - A different beat type that lasts for 2 pulses.  
+**Tick** - Amount of time between pulses, measured in beats.  
+**Swing** - Changes the duration of a pulse to be longer / shorter.  
+**Offbeat** - A red X, the pulse will not play the row's beat sound on these.  
+**Free time** - A special type of beat that lets you change each pulse individually.
+:::

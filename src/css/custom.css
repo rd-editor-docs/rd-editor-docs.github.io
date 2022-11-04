@@ -36,6 +36,14 @@ img {
   margin: 0 auto 5px;
 }
 
+figcaption {
+  position: relative;
+  top: -5px;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+}
+
 .left {
   display: inline-block;
 }
