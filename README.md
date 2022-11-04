@@ -1,6 +1,6 @@
 # Level Editor Tutorial for Rhythm Doctor
 
-Visit the tutorial website [here](https://rd-editor-docs.github.io/rd-editor-docs/intro). This is the GitHub repository for the tutorial.
+Visit the tutorial website [here](https://rd-editor-docs.github.io/intro). This is the GitHub repository for the tutorial.
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. If you want to add information or make some edits, keep reading to see how to make a pull request.
 

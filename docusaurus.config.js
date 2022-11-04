@@ -9,7 +9,7 @@ const config = {
   title: 'Level Editor Tutorial',
   tagline: 'A tutorial that covers everything in the level editor, from cues to surgery.',
   url: 'https://rd-editor-docs.github.io',
-  baseUrl: '/rd-editor-docs/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rd-editor-docs', // Usually your GitHub org/user name.
-  projectName: 'rd-editor-docs', // Usually your repo name.
+  projectName: 'rd-editor-docs.github.io', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -38,7 +38,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/rd-editor-docs/rd-editor-docs/tree/main/',
+            'https://github.com/rd-editor-docs/rd-editor-docs.github.io/tree/main/',
         },
         blog: false,
         theme: {
@@ -69,7 +69,7 @@ const config = {
             position: 'right'
           },
           {
-            href: 'https://github.com/rd-editor-docs/rd-editor-docs',
+            href: 'https://github.com/rd-editor-docs/rd-editor-docs.github.io',
             label: 'GitHub',
             position: 'right',
           },
@@ -105,7 +105,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/rd-editor-docs/rd-editor-docs',
+                href: 'https://github.com/rd-editor-docs/rd-editor-docs.github.io',
               },
             ],
           },
