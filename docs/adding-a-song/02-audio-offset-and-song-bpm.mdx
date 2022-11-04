@@ -1,1 +1,42 @@
 # Audio Offset and Song BPM
+
+Getting the right audio offset and song BPM help keep the gameplay in sync with the music.
+
+## Audio Offset
+Once you've loaded the song you want to use in the editor, you may notice that the music waveform doesn't quite line up with the beat. This is where audio offset comes in.
+
+To find the offset of the song, open it in Audacity, and zoom in on the start of the waveform.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1037989608924905543/unknown.png" alt="Zoomed-in waveform in Audacity" width="70%"/>
+
+Once you have zoomed in far enough, click on the first part of the waveform.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1037989983140728873/unknown.png" alt="Finding offset in Audacity 2" width="70%"/>
+
+The number that appears for audio position is your audio offset, in this case 16ms. In the Rhythm Doctor Editor, change the audio offset field to 16ms, and the song will begin in sync with the game now.
+
+:::info
+Sometimes the waveform doesn't begin on a beat - in this case, pick a different part of the song with a strong spike in the waveform to locate one.
+Finding an accurate audio offset can take a lot of trial and error, but it will be worth it to keep the song in sync.
+:::
+
+## Song BPM
+Now that you have found the song's audio offset, it is time to find its BPM. If you're lucky, you can search `[Your song name] BPM` and get the right answer, but more often than not this value is not correct. In this case, you will have to find the BPM yourself.
+
+To find the BPM, go to a website such as [this one](http://www.all8.com/tools/bpm.htm) and play your song. Press any button to begin, and keep tapping until the BPM stays constant around one number. The more taps you make, the better the result of the calculation will be.
+
+![Using All8 to tap BPM](https://cdn.discordapp.com/attachments/809186922420502568/1037990571198922793/unknown.png)
+
+In this case the BPM for the song is 160, so fill this number in in the BPM field.
+
+![Play Song fields filled in](https://cdn.discordapp.com/attachments/809186922420502568/1037990705357930516/unknown.png)
+
+After all of this work, you can now finally begin working on your level.
+
+:::danger
+Getting the BPM right is the most important step in making a level.
+
+If it is off at the beginning, all of the events placed from now on won't line up properly and can be a big headache to fix.
+
+Using the metronome and skipping to the end of the song in the timeline is a good way to test that the BPM is accurate, since the song should still be in sync.
+:::
