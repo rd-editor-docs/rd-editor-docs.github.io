@@ -1,0 +1,100 @@
+import ReactPlayer from 'react-player';
+
+# Oneshot Rows
+<h3 className="subtitle">You only get one shot, do not miss your chance to blow</h3>
+
+## Making a Oneshot
+To create a Oneshot, go to the row settings of an already created row or make a new one, and change the beat type from **Classic** to **Oneshot**. Now when you click on the timeline, you will create a Oneshot instead of a Classic beat.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038366419466862672/image.png" alt="Oneshot beat menu" width="70%"/>
+	<figcaption>Note that the pulse shape is a wave now.</figcaption>
+</figure>
+
+Since a Oneshot is made of one pulse, each Oneshot will last precisely as long as its Tick value. By hovering over the Oneshot beat, a small icon will appear in the top right corner. Drag this to the right to create a loop (or modify the Loops field in the menu).
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038366058429546546/Untitled.png" alt="Oneshot loop demo" width="70%"/>
+
+The **Interval** is the number of beats between new Oneshots, and by default this is twice the Tick. This is the standard spacing for oneshots, where the space is the same between a new Oneshot appearing and the time you hit it. 
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038367883362836531/oneshot1.gif" alt="Oneshot interval 2x tick demo" width="70%"/>
+
+Changing the Interval to be same as the tick means that every time a Oneshot ends, a new one will begin.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038368740963799050/oneshot2.gif" alt="Oneshot interval 1x tick demo" width="70%"/>
+
+Different Interval values can lead to very different Oneshot patterns, so pick the amount that works best for your song choice.
+
+## Cueing your Oneshots
+
+### Normal Oneshots
+Now that you've placed your Oneshots, it is time to cue them. Cueing your Oneshots is an important part of levelmaking, so the player knows when to hit them.
+
+First, click back to the Sounds tab and click on the timeline. Then scroll down in the list of events until you reach `Say Ready, Get, Set, Go!`.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038369823811440710/image.png" alt="Spotlights from the cues" width="70%"/>
+	<figcaption>Spotlights!</figcaption>
+</figure>
+
+To cue standard Oneshots (with Interval exactly double the Tick), all you have to do is change the Tick value of the new event you created to the same amount. Then, choose if the nurse should say `Rea, Dy, Get, Set, Go!` or just `Get, Set, Go!`. Finally, move the end of the cue so that the Go! lines up with the start of the Oneshots.
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038372341853466674/ezgif.com-gif-maker.gif" alt="Oneshot cuing demo" width="70%"/>
+
+Once the Oneshots end, make sure to place a `Stop!` cue. Place a new `Say Ready, Get, Set, Go!` event and make the nurse say `Stop!`. Move this new event to the last hit of the Oneshots, and now you have properly cued your Oneshots.
+
+You can optionally use the `And` cue when the last Oneshot appears, to give more warning that the Oneshots are ending.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038377631806132254/final_oneshot.gif" alt="Full Oneshot demo" width="70%"/>
+	<figcaption>The final result.</figcaption>
+</figure>
+
+### Irregular Oneshots
+What if your Oneshots don't follow the normal loop? First, start with your Oneshot pattern.
+
+![Irregular Oneshots](https://cdn.discordapp.com/attachments/809186922420502568/1038377828867129374/Rhythm_Doctor_Preorder_h6lGfDy9Z5.png)
+
+Go to the sounds tab and place a `Say Ready, Get, Set, Go!` event, but now make the nurse only say `Get`. Place this event at the start of your first Oneshot. Then, place another event but make the nurse say `Set` instead. This event goes right when the Oneshot is hit. Keep repeating this process until you begin the Oneshot pattern anew.
+
+![Get and Set cues for the example](https://cdn.discordapp.com/attachments/809186922420502568/1038378144106807356/Rhythm_Doctor_Preorder_gEk4tcB5DQ.png)
+
+Once the cues would begin repeating, place the last `Say Ready, Get, Set, Go!` event and make the nurse only say `Go!`.
+
+<figure className="no-side-margins">
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038378353016700989/image.png" alt="Adding Go! to the cues" width="100%"/>
+	<figcaption>You can't show the sounds tab and rows tab at the same time, but this is what it would look like.</figcaption>
+</figure>
+
+Now move the entire set of Oneshot cues to the left, until the `Go!` lines up with the start of the Oneshots.
+
+<figure className="no-side-margins">
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038378996569739324/image_1.png " alt="Cues all lined up" width="100%"/>
+	<figcaption>The Go! lines up in the same spot as the first Oneshot.</figcaption>
+</figure>
+
+Finally, turn all of the `Get` and `Set` cues into `Rea` and `Dy` cues, respectively, except for the last `Get` and `Set`.
+
+![Cues with Rea and Dy](https://cdn.discordapp.com/attachments/809186922420502568/1038379346039160912/image_1.png)
+
+Finally, place a `Stop!` cue on the hit of the last Oneshot, and you'll have completely cued your Oneshots from beginning to end.
+
+### Multiple Oneshots
+The above method also works if you have multiple Oneshots at a time, no extra steps are required.
+
+![Example Oneshots](https://cdn.discordapp.com/attachments/809186922420502568/1038379690991292476/unknown.png)
+![Corresponding cues](https://cdn.discordapp.com/attachments/809186922420502568/1038379834956599316/Rhythm_Doctor_Preorder_Il0Fjt2V4X.png)
+
+### Squareshot
+If you only need a Oneshot to happen once, instead of using the Wave option, pick Square and use `One!` instead of `Go!`. Other than that, the cueing method is the same.
+
+## Videos
+<ReactPlayer className="no-space" controls url="https://youtu.be/IiqrpJE32UI" /><br />
+<ReactPlayer className="no-space" controls url="https://youtu.be/QsC9_djsFMI" />
+
+## Terminology
+
+:::info
+**Interval** - The amount of time between Oneshots  
+**Squareshot** - A Oneshot that only happens once, indicated by a square wave
+:::

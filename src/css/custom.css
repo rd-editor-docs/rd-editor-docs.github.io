@@ -52,3 +52,16 @@ figcaption {
   top: -10px;
   margin-bottom: 0px;
 }
+
+.no-side-margins {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.subtitle {
+  position: relative;
+  top: -15px;
+  color: gray;
+  margin-top: 0px;
+  font-weight: normal;
+}
