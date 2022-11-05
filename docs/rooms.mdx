@@ -1,0 +1,71 @@
+---
+sidebar_position: 4
+---
+
+# Rooms
+<h3 className="subtitle">It's bigger on the inside!</h3>
+
+To include more than 4 rows in a level, separate rows into groups, or for some VFX tricks, it's handy to use the Rooms tab at the bottom of the timeline.
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038462249938997288/image.png" alt="Rooms tab of Pomodoro" width="45%"/>
+	<figcaption>The new rooms tab, with small thumbnails for each room that represent the full level</figcaption>
+</figure>
+
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038462538939125830/unknown.png" alt="Gameplay view of Pomodoro" width="70%"/>
+	<figcaption>Pomodoro</figcaption>
+</figure>
+
+## Show Rooms Horizontally
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038462950622633985/image.png" alt="Example of Show Rooms Horizontally" width="60%"/>
+
+*Show Rooms Horizontally* lets you pick which rooms to display on the screen. Each room's size can be changed manually using the input field. Any rooms with size `Auto%` will take up an equal amount of the remaining space.
+
+## Move Room
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038464416569622639/image.png" alt="Example of Move Room" width="60%"/>
+
+The *Move Room* event acts similarly to the *Move Camera* event, with a few differences:
+- You can move where the pivot point of the room is in relation to the screen using the Position selector.
+- The **Scale** option lets you resize the window freely unlike *Move Camera*'s Zoom.
+- **Angle** lets you rotate a room around the pivot point.
+- **Pivot** lets you set where the pivot point is in relation to the room.
+
+An option can be disabled by clicking on its label, which causes it to continue whatever previous action was applied to it.
+
+If a room is not shown, changing the scale will automatically show the room.
+
+## Reorder Rooms
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038464870775017492/image.png" alt="Example of Move Room" width="60%"/>
+
+By dragging the labels, you can change which rooms are on top of other rooms when moving windows around.
+
+## Set Room Content Mode
+*Set Room Content Mode* has two options, **Keep Aspect** and **Stretched**, which change if the room squishes with room scaling.
+
+The following examples were taken with *Move Room*s, scaled to `X = 100%`, `Y = 50%`:
+
+### Keep Aspect
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038465087385632899/unknown.png" alt="Old Yellow Bricks - Keep Aspect" width="70%"/>
+	<figcaption>Old Yellow Bricks - Keep Aspect</figcaption>
+</figure>
+
+### Stretched
+<figure>
+	<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038465420480487574/unknown.png" alt="Old Yellow Bricks - Stretched" width="70%"/>
+	<figcaption>Old Yellow Bricks - Stretched</figcaption>
+</figure>
+
+## Changing Row Rooms
+
+<img src="https://cdn.discordapp.com/attachments/809186922420502568/1038466509548306442/ezgif.com-gif-maker.gif" alt="Old Yellow Bricks - Keep Aspect" width="40%"/>
+
+In the Rows tab, you can pick which room your characters appear in, and if you change your mind later the room option in Row Settings will allow you to pick a different room to move your character to.
+
+:::info
+Some VFX have an **On Top** option that override room cameras and use the entire screen. To get these options to show up, you need a room change event anywhere in the level, even if it doesn't change the rooms.
+:::
