@@ -17,8 +17,8 @@ TODO as everyone currently making changes should be directly added to the organi
 - Clone the repository to your own computer. There are many tutorials on using Git if you don't know how to do this.
 - Navigate to the cloned repository in a terminal and run `npm install` to install required dependencies. This will take a while.
 - Run `npm start` to start the website locally (takes ~50s). A browser window will open automatically once ready.
-	- Changes to Markdown files will be reflected live without having to restart the server.
-		- If this doesn't seem to work, try running `npm start -- --poll` instead.
+	- Changes to Markdown files should be reflected live without having to restart the server.
+		- If this doesn't seem to work, try refreshing the page, or running `npm start -- --poll` instead.
 	- However, changes such as new files/folders or configuration changes will require a server restart.
 	- Note that this kind of deployment only supports **one locale**. Trying to change locale will result in "no page found" errors.
 		- To view a different locale (e.g. French), start with `npm start -- --locale fr`.
@@ -54,8 +54,10 @@ All the documentation files are in the `docs` folder.
 
 ### Media
   
-Images can be placed in the same folder as documentation pages or inside a nested `assets` folder. These can be accessed in Markdown using relative paths.
-- They can also be accessed in JSX components using `src={require(<relative path>).default}`.
+Images should be placed inside the `static/img` folder.
+- These can be accessed in Markdown using relative paths (e.g. `![](/img/rows/irregular_oneshots.png`).
+- They can also be accessed in JSX components using `src={useBaseUrl('/img/rows/final_oneshot.gif')}`.
+  - You will need to have `import useBaseUrl from '@docusaurus/useBaseUrl';` at the top of the page.
 
 If you want styling on images (e.g. to center it on the page or change the size), you have to use JSX and change your file extension to `.mdx`.
 ```
