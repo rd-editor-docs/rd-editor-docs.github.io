@@ -1,0 +1,71 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Hall of Mirrors
+<h3 className="subtitle">How can something so enticing have such awful side effects?</h3>
+
+## The Cool Effect™
+Hall of Mirrors (HOM) is an effect that repeats the previous frame and doesn't clear it. This can cause the level to become a big mess if you don't take precautions against HOM's effects.
+
+![](/img/vfx/hom/intro.gif)
+
+:::danger
+In the wrong hands, HOM can cause seizure inducing visuals.
+Do **not** use HOM with Invert Colors.
+This causes very rapid flashing - **Do NOT combine HOM with Invert Colors**.
+:::
+
+## HOM + Themes
+HOM doesn't work with most themes since they have solid backgrounds; however, there are some themes that do work with HOM, which are:
+- Intimate
+- Intimate Simple
+- Matrix
+- Politician's Rally (only the black bars at the top and bottom)
+- Hall of Mirrors
+
+## Coping Methods
+
+Without a coping method, the effects of HOM will quickly make a level unplayable, but certain other VFX help fix this issue.
+
+### Vignette (+ Flicker)
+<img src={useBaseUrl('/img/vfx/hom/vignette.gif')} alt="HOM coping using Vignette" width="85%"/>
+*Vignette* sort of "captures" the effects of HOM, and the ghost images will be pulled towards the center of the screen. This is because the center of the vignette has very little tinting, so it accumulates ghosting more than other areas of the screen.
+
+### Rain
+<img src={useBaseUrl('/img/vfx/hom/rain.gif')} alt="HOM coping using Rain" width="85%"/>
+The rain will quickly cover the background and make a flowing white background instead. The edges of rows will appear to smoulder away.
+
+### Custom Flash
+<img src={useBaseUrl('/img/vfx/hom/custom_flash.gif')} alt="HOM coping using Custom Flash" width="85%"/>
+Take *Custom Flash*, and make a custom flash of any color. Make it semi transparent, depending on how much you want the "ghosting" to be exaggerated. Combining this with *Wavy Rows* shows that the hall of mirrors effect is still there, but much more controlled.
+
+### Transparent Background
+
+[Repent Your Sins style gif]
+
+When you add a custom background image with transparent parts, the parts with transparency will show the Hall of Mirrors underneath, but the solid parts will not. This is useful when you want a background behind your rows, and want the edges to have other Hall of Mirrors effects.
+
+## Advanced HOM
+
+### Screen Scroll
+<img src={useBaseUrl('/img/vfx/hom/screen_scroll.gif')} alt="HOM with Screen Scroll" width="85%"/>
+Using screen scroll you can turn a room with Hall of Mirrors into a... Hall of Mirrors. Very disorienting without a coping method.
+
+### Text Explosion
+<img src={useBaseUrl('/img/vfx/hom/text_explosion.gif')} alt="HOM with Text Explosion" width="85%"/>
+*Text Explosion* will keep the text on screen to make lines, but if used with a coping method can give a fading trail.
+
+### Colorful Shockwaves
+<img src={useBaseUrl('/img/vfx/hom/shockwaves.gif')} alt="HOM with Colorful Shockwaves" width="85%"/>
+Without a coping method causes the screen to change colors rapidly. The colorful shockwave is coloring the objects in the foreground, which colors the objects in the background. But then, it colors the objects in the background again. This can be seen with wavy rows or screen tile.
+
+### Matrix
+<img src={useBaseUrl('/img/vfx/hom/matrix.gif')} alt="HOM with Matrix" width="85%"/>
+Without a coping method, this is an unappealing mess of green lines. However, a coping method can reveal trails or melts in rain. Combines well with Colorful Shockwaves.
+
+### Noise / Glitch Obstruction
+<img src={useBaseUrl('/img/vfx/hom/noise.gif')} alt="HOM with Noise" width="85%"/>
+*Noise* appears on top of the room. However, hall of mirrors still copies it, which means that when the noise goes away, the final frame of it stays in the background, the rows overlapping it after it ends. When combined with a coping method this gives the appearance of the obstruction fading away.
+
+### Screen Tile
+<img src={useBaseUrl('/img/vfx/hom/screen_tile.gif')} alt="HOM with Screen Tile" width="85%"/>
+Hall of Mirrors copies the entire screen. When screen tile happens, it takes the tiled screen and puts it in the background. Which gets tiled because of screen tile, which gets tiled because of screen tile... The example above is a *2x2 Screen Tile* with a camera movement to only show one corner.

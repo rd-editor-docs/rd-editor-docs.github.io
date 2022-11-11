@@ -1,0 +1,57 @@
+# Dialogue Box
+
+Dialogue boxes allow you to make it appear as if a character is talking, through the use of character portraits and color in the dialogue box.
+
+## Character Portraits
+You can use a character portrait in the dialogue box by starting a line with `[Character Name]:` and then writing the text.
+
+<details><summary>Open to view list of portraits</summary>
+
+| Character Portrait | Character Name |
+| ------------------ | -------------- |
+| ![](/img/vfx/portraits/Barista.png) | Barista |
+| ![](/img/vfx/portraits/Barista_Happy.png) | Barista_Happy |
+| ![](/img/vfx/portraits/Bodybuilder50.png) | Bodybuilder |
+| ![](/img/vfx/portraits/Boy.png) | Boy |
+| ![](/img/vfx/portraits/Boy_Cry.png) | Boy_Cry |
+| ![](/img/vfx/portraits/Boy_Surprised.png) | Boy_Surprised |
+| ![](/img/vfx/portraits/Edega.png) | Edega |
+| ![](/img/vfx/portraits/Farmer.png) | Farmer |
+| ![](/img/vfx/portraits/Girl.png) | Girl |
+| ![](/img/vfx/portraits/Girl_Cry.png) | Girl_Cry |
+| ![](/img/vfx/portraits/Girl_Surprised.png) | Girl_Surprised |
+| ![](/img/vfx/portraits/HoodieBoy.png) | HoodieBoy |
+| ![](/img/vfx/portraits/Ian.png) | Ian |
+| ![](/img/vfx/portraits/Lucia.png) | Lucia |
+| ![](/img/vfx/portraits/Miner.png) | Miner |
+| ![](/img/vfx/portraits/Paige.png) | Paige |
+| ![](/img/vfx/portraits/Paige_RedNose.png) | Paige_RedNose |
+| ![](/img/vfx/portraits/Politician.png) | Politician |
+| ![](/img/vfx/portraits/Rodney.png) | Rodney |
+| ![](/img/vfx/portraits/Rodney_Clip.png) | Rodney_Clip |
+| ![](/img/vfx/portraits/Samurai.png) | Samurai |
+| ![](/img/vfx/portraits/SamuraiBoss.png) | SamuraiBoss |
+| ![](/img/vfx/portraits/SmokinBarista.png) | SmokinBarista |
+
+</details>
+
+## Events
+Dialogue boxes let you change the speed and color of the text through various events.
+
+`[vslow]` - Makes the text very slow.  
+`[slow]`  - Makes the text slow.  
+`[normal]` - Returns the text to default speed.  
+`[fast]` - Makes the text fast.  
+`[vfast]` - Makes the text very fast.  
+`[shout]` - Flashes the screen and makes the text even faster than `[vfast]`.  
+`[#]`  - Waits # seconds.  
+`[flash]` - Flashes the screen.  
+`[volume = 100]` - Sets the sound volume for the following text. The default is 100.  
+`[pitch = 100]` - Sets the sound tone pitch for the following text. The default is 100.  
+`[pitchRange = 3]` - Sets the sound tone variation range. The default is 3.  
+`<color=#RRGGBBAA>` - Changes the color of the text, and opacity. Needs to be followed by a `</color>` tag.
+
+### Examples
+`HoodieBoy:hey this text is <color=#ff0000>red</color> and this is <color=#0000ff>blue</color>.`
+
+`[slow] this is a slow text [vfast] now i'm talking really fast. Now let's wait 5 seconds and a half [5.5]. Ok! I'm done.`

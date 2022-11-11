@@ -1,0 +1,55 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Set Background and Foreground
+
+## Background (Color)
+The background option in *Set Background* is the simplest, and allows you to change the background color for a room. It also has an opacity slider, which will be used for some fancier VFX tricks coming up.
+
+## Background (Image) and Foreground
+Each room can have a single background and foreground applied to it, but these can be changed by using another *Set Background* / *Set Foreground* event. The minimum resolution of the editor is 352x198 pixels.
+
+Each image gets a choice of five different image aspect ratios:
+
+<figure>
+	<img src={useBaseUrl('/img/vfx/background/politician_base.png')} alt="Base image of Politician"/>
+	<figcaption>The following images all used this 44x45 pixel image.</figcaption>
+</figure>
+
+### Scale to Fill
+
+<img src={useBaseUrl('/img/vfx/background/scale_to_fill.png')} alt="Image using Scale to Fill" width="65%"/>
+
+### Aspect Fit
+
+<img src={useBaseUrl('/img/vfx/background/aspect_fit.png')} alt="Image using Aspect Fit" width="65%"/>
+
+### Aspect Fill
+
+<img src={useBaseUrl('/img/vfx/background/aspect_fill.png')} alt="Image using Aspect Fill" width="65%"/>
+
+### Center
+
+<img src={useBaseUrl('/img/vfx/background/center.png')} alt="Image using Center" width="65%"/>
+
+### Tiled
+
+<img src={useBaseUrl('/img/vfx/background/tiled.png')} alt="Image using Tiled" width="65%"/>
+
+Tiled repeats the image across the screen until it is completely filled up. The bottom left most pixel of the image is placed in the bottom left most pixel of the editor screen. The Tiled image setting also allows you to set a scroll speed for the image in pixels per second, which will wrap the image.
+
+## Set Background Transparency
+What if you want to have more layers at once though? This is where set background transparency and room movements come into play.
+
+<figure>
+	<img src={useBaseUrl('/img/vfx/background/first_steps.png')} alt="First Steps level" width="85%"/>
+	<figcaption>First Steps by lugi and AdipemDragon uses 7 layers to create a parallax effect.</figcaption>
+</figure>
+
+Rooms can be layered on top of one another by using several *Move Room* events, like so:
+
+<figure>
+	<img src={useBaseUrl('/img/vfx/background/move_room.png')} alt="Move Room menu" width="85%"/>
+	<figcaption>Now the rooms are on top of one another, you just can't see past the first one.</figcaption>
+</figure>
+
+By using a *Set Background (Color)* event and setting the alpha value to 0 for each room, you can place foregrounds and backgrounds with transparent sections in each room and see each layer.
