@@ -1,3 +1,4 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import ReactPlayer from 'react-player';
 
 # Set Play Style
@@ -22,8 +23,10 @@ This causes the playhead to restart the current bar upon reaching the end of the
 ## Prolong
 This causes the playhead to stop at the end of the current bar until the play style is changed to something else. The game **will wait for the end of a bar** (music-wise) before changing the play style away from Prolong in order to maintain sync.
 
-![](https://i.imgur.com/61rKfMT.png)
-*The playhead will remain here until the play style is changed.*
+<figure>
+	<img src={useBaseUrl('/img/advanced-techniques/prolong_ex.png')} alt="Editor preview with a Prolong Play Style"/>
+	<figcaption>The playhead will remain here until the play style is changed.</figcaption>
+</figure>
 
 Note that since the playhead no longer moves, **you will get stuck** unless you have a conditional that eventually triggers and changes the play style.
 
@@ -32,7 +35,7 @@ Using the `activeDialogues` mod automatically sets the play style to Prolong, wh
 ## Immediately
 This causes the playhead to jump to another bar **after a prebar of approximately 667ms**. The absolute bar number can be given, or a relative bar number from the current bar can be given instead.
 
-![](https://i.imgur.com/ij7uQ1d.png)
+![View of Immediately play style](/img/advanced-techniques/immediately_playstyle.png)
 
 Unlike the `SetNextBar()` custom method, this event can be executed in the middle of a bar (or even the middle of a beat).
 
