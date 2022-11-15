@@ -1,0 +1,60 @@
+# Surgery
+<h3 className="subtitle" They did surgery on an rdlevel></h3>
+
+With the basics of the level editor, there are some hidden ways to edit a level as well. An .rdlevel file can be opened in a text editor to make changes to the level that couldn't be made otherwise currently.
+
+## Characters
+One of the categories in the rdlevel file is called rows and will have a similar format to this:
+
+![.rdlevel rows field](/img/advanced-techniques/rows_rdlevel.png)
+
+You can edit the character name into any of the following characters (characters not available by default may have unfinished animations)
+- Samurai
+- Boy
+- Girl
+- Bodybuilder
+- SamuraiBoss
+- Paige
+- Politician
+- Miner
+- Farmer
+- MrStevenson
+- MrsStevenson
+- SamuraiGirl
+- SmokinBarista
+- HoodieBoy
+- Barista
+- Adog
+- MrStevendog
+- MrsStevendog
+- Purritician
+- Tentacle
+- BoyTangzhuang
+- GirlCNY
+- BoyRaya
+- HoodieBoyAlternate
+- FarmerAlternate
+- HoodieBoyBlue
+- Lucialev
+
+## Settings and Mods
+At the top of the rdlevel file you can add mods to your level to make it behave slightly differently.
+
+![Entries for settings in the .rdlevel file](/img/advanced-techniques/settings_rdlevel.png)
+
+The list of mods that can be used are:
+
+| Mod | Effect |
+|-----|--------|
+| noSmartJudgement | Changes hit timing rules - makes it so if you miss a note late enough that it's a hit for the next note, it's still a miss for the first. |
+| adaptRowsToRoomHeight | Automatically move rows closer or further apart when the room size changes. |
+| noDoublePulse | No special double/triple pulse animations. |
+| showHitStripOnlyOnActiveBeats | Hitstrip only appears in rooms where there are active beats. |
+| smoothShake | Replaces screen shakes with a smooth version. |
+| rotateShake | Replaces screen shakes with a rotation shake. |
+| wobblyLines | Oneshots turn wobbly, and wobble when hit. |
+| bombBeats | Freetimes that start on a hit will be bombs and miss on hit. |
+| disableRowChangeWarningFlashes | Disables row change warning flashes when changing a row from CPU or another player. |
+| noOneshotShadows | Removes the aftereffect on short oneshots. |
+
+Another setting changeable through surgery is `firstBeatBehavior`, which by default is `RunNormally`. You can change this to `RunEventsOnPrebar` to make any action events on bar 1 beat 1 happen before the level starts.
