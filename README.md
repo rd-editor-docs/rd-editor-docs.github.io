@@ -7,15 +7,25 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ## Local Development
 
-### Forking the repository
+### Requirements
 
-TODO as everyone currently making changes should be directly added to the organization (can commit directly to `main`).
+- A GitHub account.
+- Basic Git knowledge (e.g. cloning, making commits, pushing/pulling).
+	- There are many online tutorials on using Git, or you can use something with a user interface like GitHub Desktop.
+- Basic terminal knowledge (e.g. running executables, changing directories).
+  - There are also many online tutorials on using a terminal. I use (Git) Bash, but Windows Powershell can work too.
+- [Node.js](https://nodejs.org/en/download/) v16 or higher. You can check your Node version with `node -v`.
+
+### Running locally
+
+- First, create a fork of the repository.
+	- This can be done by clicking "Fork" on the [main page of the repository](https://github.com/rd-editor-docs/rd-editor-docs.github.io)).
+	- This creates a copy of the repository where you are the owner and can thus make changes freely.
+- Clone the forked repository to your own computer.
+- Navigate to the cloned repository in a terminal and run `npm install` to install required dependencies. This will take a while.
 
 ### Making changes
 
-- Make sure you have [Node.js](https://nodejs.org/en/download/) v16 or higher. You can check your Node version with `node -v`.
-- Clone the repository to your own computer. There are many tutorials on using Git if you don't know how to do this.
-- Navigate to the cloned repository in a terminal and run `npm install` to install required dependencies. This will take a while.
 - Run `npm start` to start the website locally (takes ~50s). A browser window will open automatically once ready.
 	- Changes to Markdown files should be reflected live without having to restart the server.
 		- If this doesn't seem to work, try refreshing the page, or running `npm start -- --poll` instead.
@@ -30,7 +40,11 @@ TODO as everyone currently making changes should be directly added to the organi
 
 ### Making a pull request
 
-TODO as everyone currently making changes should be directly added to the organization (can commit directly to `main`).
+- Create a pull request to merge your changes into the main repository.
+	- This should be done after pushing your commits to your fork and verifying that the built website looks correct.
+	- You can use `git merge` or the "Contribute" --> "Make a pull request" buttons on the main page of the forked repository.
+- In the pull request description, try to leave a clear summary of the changes.
+- Your pull request will be reviewed as soon as possible, and comments may be left on suggested edits before it can be merged.
 
 
 ## Working with Docusaurus
