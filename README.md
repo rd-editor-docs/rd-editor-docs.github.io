@@ -19,7 +19,7 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ### Running locally
 
 - First, create a fork of the repository.
-	- This can be done by clicking "Fork" on the [main page of the repository](https://github.com/rd-editor-docs/rd-editor-docs.github.io)).
+	- This can be done by clicking "Fork" on the [main page of the repository](https://github.com/rd-editor-docs/rd-editor-docs.github.io).
 	- This creates a copy of the repository where you are the owner and can thus make changes freely.
 - Clone the forked repository to your own computer.
 - Navigate to the cloned repository in a terminal and run `npm install` to install required dependencies. This will take a while.
