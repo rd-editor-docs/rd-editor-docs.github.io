@@ -11,9 +11,9 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 - A GitHub account.
 - Basic Git knowledge (e.g. cloning, making commits, pushing/pulling).
-	- There are many online tutorials on using Git, or you can use something with a user interface like GitHub Desktop.
+	- There are many tutorials on using Git, or you can use something with a user interface like GitHub Desktop.
 - Basic terminal knowledge (e.g. running executables, changing directories).
-  - There are also many online tutorials on using a terminal. I use (Git) Bash, but Windows Powershell can work too.
+  - There are also many tutorials on using a terminal like (Git) Bash. Windows Powershell can also work in a pinch.
 - [Node.js](https://nodejs.org/en/download/) v16 or higher. You can check your Node version with `node -v`.
 
 ### Running locally
