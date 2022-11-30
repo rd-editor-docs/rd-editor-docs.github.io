@@ -8,8 +8,8 @@ This page is split into two guides, depending on how involved you want to get.
 
 ### Requirements
 - A GitHub account.
-- Install [Node](https://nodejs.org/en/download/) v16 or higher.
-- Git. Windows does not come with Git; you can install [Git for Windows](https://gitforwindows.org/), which comes with Git Bash ( a terminal).
+- [Node](https://nodejs.org/en/download/) v16 or higher.
+- Git. You can install [Git for Windows](https://gitforwindows.org/), which comes with Git Bash.
 
 
 ## Quick Start
@@ -24,32 +24,42 @@ This is only suitable for small-scale edits and does not explain hosting a local
 
 
 ## Normal Start
-This guide assumes no knowledge of using Git or a terminal, and does not explain any of those commands listed. If you are interested in learning more, you can find many tutorials online.
+This guide assumes no knowledge of using Git or a terminal. If you do know some, feel free to modify the steps to your liking.
 
 ### Creating and cloning a fork
-1. Create a fork of the [main repository](https://github.com/<username>/rd-editor-docs.github.io) (click "Fork" on the top right of the page).
+A fork is a copy of the repository where you are the owner and can thus make changes freely.
+1. Click "Fork" on the top right of the [main repository's home page](https://github.com/rd-editor-docs/rd-editor-docs.github.io).
 2. Open Git Bash, type `cd ~/Desktop`, and press Enter. (All future commands typed into the terminal should be submitted with the Enter key.)
-3. Type `git clone https://github.com/<username>/rd-editor-docs.github.io`, replacing `<username>` with your GitHub username. Once the command finishes, a local copy of your forked repository will be on your desktop.
+3. Type `git clone https://github.com/<username>/rd-editor-docs.github.io`, replacing `<username>` with your GitHub username. This will create a local copy of your forked repository on your desktop.
 4. Type `cd ~/Desktop/rd-editor-docs.github.io`, then `npm install` to install dependencies.
 
 ### Making local changes
-1. You can directly modify files inside the folder using your text editor of choice.
-2. To host a local version of the website to see if your changes had an effect, type `npm start`.
-3. A browser window will open with your changes (may take some time). Any further file changes should automatically update the website.
-4. Press `Ctrl-C` in the terminal to stop the process.
-Note: If the browser window does not seem to automatically update changes, first make sure that you are saving the edited files. Otherwise, try stopping the process and then running `npm start -- --poll` instead of `npm start`.
+You can directly modify files inside the folder using your text editor of choice. To see if your changes had any effect, you can host a local version of the site.
+0. Ensure you're in the root directory (otherwise, type `cd ~/Desktop/rd-editor-docs.github.io`).
+1. Type `npm start`. A browser window will open a copy of the site. Any further file changes should automatically update the site.
+2. Press `Ctrl-C` in the terminal to stop the process.
+Note: If changes don't seem to be automatically updating, first make sure that you are saving the edited files. Otherwise, try stopping the process and then running `npm start -- --poll` instead of `npm start`.
  
 ### Committing changes
-1. Type `git config core.editor notepad` to use Notepad as your default git editor.
-2. To commit your changes, type `cd ~/Desktop/rd-editor-docs.github.io`, then `git add .`, then `git commit`.
+This "saves" all of your changes into a local snapshot called a "commit".
+0. Ensure you're in the root directory (otherwise, type `cd ~/Desktop/rd-editor-docs.github.io`).
+1. Type `git config core.editor notepad` to use Notepad as your default git editor. You only need to do this once.
+2. To commit your changes, type `git add .`, then `git commit`.
 3. Notepad will open. Type your commit message, then close the file when you want to save.
 4. Type `git push` to push your new commit to your fork. You will now be able to view your changes on the [main page of your fork](https://github.com/<username>/rd-editor-docs.github.io).
 
 ### Making a pull request
+This is a request to merge a set of commits into the main repository. Before doing this, it would help if you tested your changes on a local copy of the site to ensure nothing was broken.
 1. Go to the main page of your fork on GitHub.
-2. Press "Contribute" --> "Make a pull request", then leave a summary of the changes in the description.
-
+2. Click "Contribute" --> "Make a pull request", then leave a summary of the changes in the description.
 Your pull request will be reviewed as soon as possible, and comments may be left on suggested edits before it can be merged.
+
+### Staying up-to-date
+Since your fork is separate from the main repository, it may fall behind in content over time as new commits are merged.
+1. Go to the main page of your fork on GitHub.
+2. Click "Sync fork" --> "Update branch".
+3. Ensure you're in the root directory (otherwise, type `cd ~/Desktop/rd-editor-docs.github.io`).
+4. Type `git pull`. This will update your local copy of the fork. If you have uncommitted/unpushed changes, you may need to resolve a merge conflict.
 
 
 ## Additional Documentation on Docusaurus-specific Commands

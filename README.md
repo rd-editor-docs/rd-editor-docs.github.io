@@ -2,7 +2,7 @@
 
 Visit the tutorial website [here](https://rd-editor-docs.github.io/intro). This is the GitHub repository for the tutorial.
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. If you want to add information or make some edits, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. If you want to add information or make some edits, see the [contribution guide](./CONTRIBUTING.md).
 
 ## Working with Docusaurus
 
