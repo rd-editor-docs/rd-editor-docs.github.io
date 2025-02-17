@@ -24,7 +24,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr'],
+    locales: ['en', 'fr', "es", "de", "ca"],
   },
 
   presets: [
@@ -110,7 +110,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} RD Level Editor Tutorial. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
