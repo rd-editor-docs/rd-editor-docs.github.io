@@ -1,0 +1,13 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# 곡 불러오기
+
+에디터에 들어가면 다음과 같은 화면을 보시게 될 겁니다:
+
+<img src={useBaseUrl('/img/adding-a-song/initial_editor_screen.png')} alt="Initial editor screen" width="75%"/>
+
+기본적으로 사운드 탭이 선택되어 있고 *곡 재생* 이벤트가 레벨 처음 부분에 배치되어 있습니다. 타임라인의 아무 곳이나 클릭하면 현재 보이는 탭 내의 이벤트 목록들을 볼 수 있습니다. 곡을 추가하기 위해 *곡 재생* 이벤트를 클릭하세요.
+
+<img src={useBaseUrl('/img/adding-a-song/play_song_menu.png')} alt="Play Song menu" width="75%"/>
+
+곡 이름 오른쪽의 폴더 아이콘을 누르면 불러올 곡을 선택할 수 있습니다. 에디터는 우선 레벨을 저장할 것을 요구합니다, 그때 레벨을 폴더에 저장한 후 오디오 파일을 불러오세요. 에디터는 자동으로 레벨을 저장한 폴더에 곡을 복사해 올 겁니다.
