@@ -1,0 +1,66 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Custom Characters
+
+Custom characters consist of 4 different animations, an idle, happy (hit), miss, and barely miss animation.
+This guide will be using the following Sig sprite:
+
+<figure>
+    <img src={useBaseUrl('/img/advanced-techniques/Sig.png')} alt="Sig spritesheet" width="75%"/>
+    <figcaption>Sprites made by thefinals~</figcaption>
+</figure>
+
+## Making a Custom Character Sprite Sheet
+To make a custom character, all of the sprites must be arranged into a sprite sheet. The easiest way to do this is using Aseprite's `Export Sprite Sheet` option.
+
+<figure>
+    <img src={useBaseUrl('/img/advanced-techniques/aseprite_export.png')} alt="Aseprite Export menu" width="55%"/>
+    <figcaption>Make sure that Inner Padding is set to 4.</figcaption>
+</figure>
+
+## JSON
+```JSON
+{
+    "size": [42, 43],
+    "clips": [
+        { "name": "neutral", "frames": [0, 1, 2, 3], "loop": "onBeat", "fps": 0, "portraitOffset": [8, 15], "portraitSize": [27, 30] },
+        { "name": "happy", "frames": [9, 10, 11, 12, 13], "loop": "no", "fps": 0, "portraitOffset": [8, 15], "portraitSize": [27, 30] },
+        { "name": "barely", "frames": [18, 19, 20], "loop": "no", "fps": 5, "portraitOffset": [8, 15], "portraitSize": [27, 30] },
+        { "name": "missed", "frames": [27, 28, 29, 30, 31, 32, 33, 34, 35], "loop": "yes", "fps": 8, "loopStart": 5, "portraitOffset": [8, 10], "portraitSize": [30, 32] },
+        { "name": "dialogueMiss", "frames": [32, 33, 34, 35], "loop": "yes", "fps": 8, "portraitOffset": [8, 10], "portraitSize": [30, 32] }
+    ]
+}
+```
+
+Each character needs an accompanying JSON file that lists which sprites are used in the animation. Set `size` to be your sprite's canvas size +8 to allow glow and row outlines to work.
+
+Clips are each of the characters animations, which are further split:
+- **name** is the animation name, and your character must contain neutral, happy, barely, and missed animations. You can also add as many of your own animations, which you can play on command using the Play Expression event.
+- **frames** is a list of the sprites used from the sprite sheet. The sprites are 0-indexed, left-to right, top‑to‑bottom.
+- **loop** changes the characters animation looping behavior:
+  - `no` won't loop at all, and will return to the neutral animation once finished.
+  - `yes` will play the animation from the beginning again once it has finished.
+  - `onBeat` will play the animation from the start on every beat.
+You can also use **loopStart** to pick a frame from the list that the animation starts the loop at and is 0‑indexed.
+- **fps** determines how quickly the animation plays.
+    - Nonzero: Frames play at a given fps, regardless of the bpm.
+    - Zero: Frames play at a rate of 4/beat. This is designed to only work with loop onBeat.
+
+Make sure you save the sprite sheet as `<charactername>.png` and the JSON file as `<charactername>.json`. Once finished, place the two files in the same location as your level, and click the folder icon next to the character's name of the row you want to change to open the JSON file.
+
+## Custom Dialogue Box
+Custom Characters can be used in dialogue boxes just like the default characters, but a few more settings need to be added to the character JSON.
+- **portraitOffset** shifts the offset in pixels for where the character shows up (+x goes right, +y goes up).
+- **portraitSize** sets the size of the cropped frame, optional and defaults to `[25, 25]`.
+- **portraitScale** sets the scale of the sprite, optional and defaults to `2.0` .
+
+To use a specific animation, use the format `<character name>_<animation name>`, e.g. `Sig_neutral`.
+
+## Play Expression
+Using the *Play Expression* event, you can specify an animation to be played at that moment. Here is the list of animations default characters have:
+
+All characters: `neutral`, `happy`, `barely`, `missed`  
+Boy: `whaat`  
+Insomniac: `headspin`, `headspin2`, `gameover`, `gameoverloop`  
+HoodieBoy / HoodieBoyBlue: `beep1`, `beep2`, `gameover`  
+Paige: `gameover`, `needsomehelp`, `singing`, `happywalking`, `conversing`, `walking`, `asking`, `askingstop`, `sleeping`
