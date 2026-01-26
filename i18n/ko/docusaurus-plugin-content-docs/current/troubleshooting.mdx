@@ -2,24 +2,32 @@
 sidebar_position: 7
 ---
 
-# Troubleshooting
+# 문제 해결 (Troubleshooting)
 
-## Why do my beats not line up with the song?
+## 비트가 음악과 맞지 않는 이유는 무엇인가요?
 :::danger
-The BPM of your level is wrong. Even a small change of ±1 can make a huge difference. Sometimes songs have a decimal BPM, or the BPM of the song changes halfway through the level. If that's the case, place a new *Set BPM* event in the Sounds tab where the BPM changes.
+레벨의 **BPM 설정이 잘못되었습니다**.  
+±1 정도의 아주 작은 차이만 있어도 결과에는 큰 영향이 있습니다.  
+또한 어떤 곡들은 **소수점 BPM**을 가지거나, **곡 중간에 BPM이 변경**되기도 합니다.  
+이런 경우에는 BPM이 바뀌는 지점에 **Sounds 탭에서 새로운 *Set BPM* 이벤트**를 추가하세요.
 :::
 
-## I know my BPM is correct, but the song still doesn't line up?
+## BPM은 정확한데도 음악이 여전히 안 맞아요
 :::caution
-In this case the song's Audio Offset is wrong, so return to your *Play Song* event and follow the instructions in the [Audio Offset and Song BPM](./adding-a-song/02-audio-offset-and-song-bpm.mdx) article.
+이 경우에는 곡의 **Audio Offset**이 잘못 설정되어 있을 가능성이 큽니다.  
+*Play Song* 이벤트로 돌아가서,  
+[Audio Offset and Song BPM](./adding-a-song/02-audio-offset-and-song-bpm.mdx) 문서의 안내에 따라 설정을 다시 맞춰 보세요.
 :::
 
-## I've finished my level, how do I know if it's fair?
+## 레벨을 완성했는데, 이 레벨이 공정한지 어떻게 알 수 있나요?
 :::info
-You can ask for help in the [#rd-editor channel on Discord](https://discordapp.com/channels/296802696243970049/304720987319173121/) or ping the Editor Helper role, a group of people who have signed up to help making levels.
+디스코드의 [#rd-editor 채널](https://discordapp.com/channels/296802696243970049/304720987319173121/)에서 도움을 요청하거나,  
+레벨 제작을 돕기 위해 등록된 사람들로 구성된 **Editor Helper 역할**을 멘션해 의견을 구할 수 있습니다.
 :::
 
-## I finished reading this guide but I still don't know where to start!
+## 이 가이드를 다 읽었는데도 어디서부터 시작해야 할지 모르겠어요
 :::info
-Play other people's levels and open them up in the editor to really study how they were put together. If making visuals is too much work, focus only on placing the beats, visuals are secondary to the gameplay.
+다른 사람들이 만든 레벨을 플레이한 뒤, 에디터에서 직접 열어보며 **구성이 어떻게 되어 있는지 분석**해 보세요.  
+비주얼 연출이 너무 부담된다면, **비트 배치에만 집중**해도 됩니다.  
+시각적 요소는 중요하지만, **게임플레이가 우선**입니다.
 :::
