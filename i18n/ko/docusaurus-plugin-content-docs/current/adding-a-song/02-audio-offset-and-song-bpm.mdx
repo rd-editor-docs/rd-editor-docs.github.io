@@ -1,24 +1,24 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# 오디오 오프셋과 곡 BPM
+# Audio Offset and Song BPM
 
-오디오 오프셋과 곡 BPM을 정확하게 맞추는 것은 게임이 음악과 싱크가 맞도록 도와줍니다.
+Getting the right audio offset and song BPM help keep the gameplay in sync with the music.
 
-## 오디오 오프셋
-일단 에디터에서 원하는 곡을 불러오면, 음악의 파형이 비트와 잘 맞지 않는 것을 확인할 수 있습니다. 이 때 오디오 오프셋을 맞춰야 합니다.
+## Audio Offset
+Once you've loaded the song you want to use in the editor, you may notice that the music waveform doesn't quite line up with the beat. This is where audio offset comes in.
 
-곡의 오프셋을 찾기 위해, Audacity에서 곡 파일을 여세요. 그리고 파형의 시작 부분에서 확대하세요.
+To find the offset of the song, open it in Audacity, and zoom in on the start of the waveform.
 
 <img src={useBaseUrl('/img/adding-a-song/audacity_offset_1.png')} alt="Zoomed-in waveform in Audacity" width="70%"/>
 
-충분히 확대하면, 파형의 첫 부분을 클릭하세요.
+Once you have zoomed in far enough, click on the first part of the waveform.
 
 <img src={useBaseUrl('/img/adding-a-song/audacity_offset_2.png')} alt="Finding offset in Audacity" width="70%"/>
 
-오디오 포지션에 보이는 숫자가 오디오 오프셋입니다. 이 경우 16ms네요. 에디터에서 오디오 오프셋 필드에 확인한 숫자를 입력하세요. 그러면 곡이 게임과 싱크에 맞게 시작할 겁니다.
+The number that appears for audio position is your audio offset, in this case 16ms. In the Rhythm Doctor Editor, change the audio offset field to 16ms, and the song will begin in sync with the game now.
 
 :::info
-때때로 파형이 첫 번째 비트에 시작하지 않을 수 있습니다. - 이 경우, pick a different part of the song with a strong spike in the waveform to locate one.
+Sometimes the waveform doesn't begin on a beat - in this case, pick a different part of the song with a strong spike in the waveform to locate one.
 Finding an accurate audio offset can take a lot of trial and error, but it will be worth it to keep the song in sync.
 :::
 
