@@ -5,63 +5,70 @@ sidebar_position: 4
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Rooms
-<h3 className="subtitle">It's bigger on the inside!</h3>
+<h3 className="subtitle">겉보기보다 안이 훨씬 넓습니다!</h3>
 
-To include more than 4 rows in a level, separate rows into groups, or for some VFX tricks, it's handy to use the Rooms tab at the bottom of the timeline.
+레벨에서 **4줄을 초과하는 행(row)**을 사용하거나, 행을 여러 그룹으로 나누거나, 특정 **VFX 연출**을 활용하고 싶을 때는 타임라인 하단에 있는 **Rooms** 탭을 사용하면 편리합니다.
 
 <figure>
-	<img src={useBaseUrl('/img/rooms/pomodoro_rooms.png')} alt="Rooms tab of Pomodoro" width="45%"/>
-	<figcaption>The new rooms tab, with small thumbnails for each room that represent the full level</figcaption>
+	<img src={useBaseUrl('/img/rooms/pomodoro_rooms.png')} alt="Pomodoro의 Rooms 탭" width="45%"/>
+	<figcaption>각 방이 전체 레벨을 대표하는 작은 썸네일로 표시되는 새로운 Rooms 탭</figcaption>
 </figure>
 
 <figure>
-	<img src={useBaseUrl('/img/rooms/pomodoro_gameplay.png')} alt="Gameplay view of Pomodoro" width="70%"/>
-	<figcaption>Pomodoro by Fancybread, noche</figcaption>
+	<img src={useBaseUrl('/img/rooms/pomodoro_gameplay.png')} alt="Pomodoro의 게임플레이 화면" width="70%"/>
+	<figcaption>Pomodoro — Fancybread, noche 제작</figcaption>
 </figure>
 
 ## Show Rooms Horizontally
 
-<img src={useBaseUrl('/img/rooms/show_rooms_horizontally.png')} alt="Example of Show Rooms Horizontally" width="60%"/>
+<img src={useBaseUrl('/img/rooms/show_rooms_horizontally.png')} alt="Show Rooms Horizontally 예시" width="60%"/>
 
-*Show Rooms Horizontally* lets you pick which rooms to display on the screen. Each room's size can be changed manually using the input field. Any rooms with size `Auto%` will take up an equal amount of the remaining space.
+*Show Rooms Horizontally*는 화면에 **어떤 Room들을 표시할지** 선택할 수 있는 기능입니다.  
+각 Room의 크기는 입력 칸을 통해 **수동으로 조절**할 수 있으며, 크기가 `Auto%`로 설정된 Room들은 **남은 공간을 동일한 비율로 나누어** 차지하게 됩니다.
 
 ## Move Room
 
-<img src={useBaseUrl('/img/rooms/move_room.png')} alt="Example of Move Room" width="60%"/>
+<img src={useBaseUrl('/img/rooms/move_room.png')} alt="Move Room 예시" width="60%"/>
 
-The *Move Room* event acts similarly to the *Move Camera* event, with a few differences:
-- You can move where the pivot point of the room is in relation to the screen using the Position selector.
-- The **Scale** option lets you resize the window freely unlike *Move Camera*'s Zoom.
-- **Angle** lets you rotate a room around the pivot point.
-- **Pivot** lets you set where the pivot point is in relation to the room.
+*Move Room* 이벤트는 *Move Camera* 이벤트와 유사하게 동작하지만, 몇 가지 차이점이 있습니다.
 
-An option can be disabled by clicking on its label, which causes it to continue whatever previous action was applied to it.
+- **Position** 선택기를 사용해 화면을 기준으로 Room의 **피벗 포인트 위치**를 조정할 수 있습니다.
+- **Scale** 옵션을 통해 *Move Camera*의 Zoom과 달리, 창 크기를 **자유롭게 조절**할 수 있습니다.
+- **Angle**은 피벗 포인트를 중심으로 Room을 **회전**시킵니다.
+- **Pivot**은 Room 내부에서 **피벗 포인트의 위치**를 설정합니다.
 
-If a room is not shown, changing the scale will automatically show the room.
+각 옵션은 **라벨을 클릭**하면 비활성화할 수 있으며, 비활성화된 옵션은 이전에 적용된 동작을 그대로 유지합니다.
+
+Room이 현재 화면에 표시되지 않는 상태에서 **Scale을 변경하면**, 해당 Room은 자동으로 화면에 표시됩니다.
 
 ## Reorder Rooms
 
-<img src={useBaseUrl('/img/rooms/reorder_rooms.png')} alt="Example of Reorder Rooms" width="60%"/>
+<img src={useBaseUrl('/img/rooms/reorder_rooms.png')} alt="Reorder Rooms 예시" width="60%"/>
 
-By dragging the labels, you can change which rooms are on top of other rooms when moving windows around.
+라벨을 **드래그**하여 Room들의 순서를 바꾸면, 창이 겹칠 때 **어떤 Room이 위에 표시될지**를 조정할 수 있습니다.
 
 ## Set Room Content Mode
-*Set Room Content Mode* has two options, **Keep Aspect** and **Stretched**, which change if the room squishes with room scaling.
 
-The following examples were taken with *Move Room*s, scaled to `X = 100%`, `Y = 50%` (screenshots are from Old Yellow Bricks by notDonte, noche):
+*Set Room Content Mode*에는 **Keep Aspect**와 **Stretched** 두 가지 옵션이 있으며,  
+Room 크기가 변경될 때 내부 화면이 **비율을 유지할지**, 아니면 **늘어나서 채워질지**를 결정합니다.
+
+아래 예시는 *Move Room* 이벤트를 사용해 `X = 100%`, `Y = 50%`로 스케일을 조정한 경우입니다  
+(스크린샷 출처: *Old Yellow Bricks* — notDonte, noche).
 
 ### Keep Aspect
-<img src={useBaseUrl('/img/rooms/keep_aspect_ex.png')} alt="Background using Keep Aspect" width="70%"/>
+<img src={useBaseUrl('/img/rooms/keep_aspect_ex.png')} alt="Keep Aspect 사용 예시" width="70%"/>
 
 ### Stretched
-<img src={useBaseUrl('/img/rooms/stretched_ex.png')} alt="Background using Stretched" width="70%"/>
+<img src={useBaseUrl('/img/rooms/stretched_ex.png')} alt="Stretched 사용 예시" width="70%"/>
 
 ## Changing Row Rooms
 
-<img src={useBaseUrl('/img/rooms/changing_row_rooms.gif')} alt="Characters in the rows list" width="40%"/>
+<img src={useBaseUrl('/img/rooms/changing_row_rooms.gif')} alt="Rows 목록의 캐릭터들" width="40%"/>
 
-In the Rows tab, you can pick which room your characters appear in, and if you change your mind later the room option in Row Settings will allow you to pick a different room to move your character to.
+**Rows** 탭에서는 각 캐릭터가 **어느 Room에 표시될지** 선택할 수 있습니다.  
+나중에 생각이 바뀌었다면, **Row Settings**의 Room 옵션을 통해 캐릭터를 **다른 Room으로 이동**시킬 수 있습니다.
 
 :::info
-Some VFX have an **On Top** option that override room cameras and use the entire screen. To get these options to show up, you need a room change event anywhere in the level, even if it doesn't change the rooms.
+일부 VFX에는 Room 카메라 설정을 무시하고 **전체 화면을 사용하는 `On Top` 옵션**이 있습니다.  
+이 옵션들이 표시되려면, 실제로 Room을 바꾸지 않더라도 **레벨 어딘가에 Room 변경 이벤트가 하나 이상 존재해야 합니다.**
 :::
